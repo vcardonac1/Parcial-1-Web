@@ -2,70 +2,61 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy">
-    <title>Document</title>
+    <title>Parcial 1</title>
 </head>
 
 <body>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-10 banner">
-                <h1 id="logotipo">Restaurant & Lounge</h1>
+            <div class="col-9 logotipo" id="vertical-center">
+                <h1>Restaurant & Lounge</h1>
             </div>
-            <div class="col-2 banner">
-                <h1>Carrito</h1>
-                <p id="numItems">0 items</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col imagen">
-                <img src="imagenCentral.png" alt="ImagenCentral">
+            <div class="col-3 centrar">
+                <div class="row">
+                    <div class="col-5 centrar">
+                        <img src="imagenCarrito.png" id="carrito">
+                        <p></p>
+                        <p id="numItems"> 0 items</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-1 navBar" id="b">
-                <p>Burgers</p>
-            </div>
-            <div class="col-1 navBar" id="t">
-                <p>Tacos</p>
-            </div>
-            <div class="col-1 navBar" id="s">
-                <p>Salads</p>
-            </div>
-            <div class="col-1 navBar" id="d">
-                <p>Desserts</p>
-            </div>
-            <div class="col-1 navBar" id="d&s">
-                <p>Drinks & Slides</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
+        <hr>
         <div class="row">
             <div class="col">
+                <img src="imagenCentral.png">
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row" id="barraNavegacion">
+            
+        </div>
+    </div>
+
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col centrar">
                 <h3 id="selected"></h3>
             </div>
         </div>
     </div>
-
+    <hr>
     <div class="container-fluid">
-        <div class="row" id="products">
-
-        </div>
+        <div class="row" id="products"></div>
     </div>
 
 

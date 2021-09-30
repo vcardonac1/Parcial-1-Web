@@ -1,3 +1,44 @@
 .logotipo{
-    font-family: "Satisfy";
+    font-family: 'Satisfy', serif;
+    font-size: 2em;
+    margin: auto;
+}
+
+img{
+    width: 100%;
+}
+
+#carrito{
+    width: 45%;
+    margin-top: 0.5em;
+    float:left;
+}
+
+#numItems{
+    float:right;
+}
+
+.centrar{
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
+#navBar{
+    background-color: rgb(42, 47, 63);
+    color: white;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.col-1{
+    padding: 0.5em;
+    float: inherit;
+}
+
+#barraNavegacion{
+    background-color: rgb(42, 47, 63);
+    color: white;
+    margin: 0;
 }
