@@ -42,7 +42,7 @@
 
     <div class="container-fluid">
         <div class="row" id="barraNavegacion">
-            
+
         </div>
     </div>
 
@@ -62,6 +62,29 @@
     <div class="container-fluid">
         <div class="row centrar" id="footer">
             <p>Contact us: +57 3102105253 - info@restaurant.com - @restaurant</p>
+        </div>
+    </div>
+
+
+    <div class="modal" tabindex="-1" id="mod">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cancel the order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure about cancelling the order?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" id="cancelAll">
+                        Yes, I want to cancel the order
+                    </button>
+                    <button type="button" class="btn btn-danger" id="noCancel">
+                        No, I want to continue adding products
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
