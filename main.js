@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 const url =
   "https://gist.githubusercontent.com/josejbocanegra/9a28c356416badb8f9173daf36d1460b/raw/5ea84b9d43ff494fcbf5c5186544a18b42812f09/restaurant.json";
 
@@ -8,6 +9,7 @@ const carrito = document.getElementById("carrito");
 const cancelAll = document.getElementById("cancelAll");
 const noCancel = document.getElementById("noCancel");
 const modal = document.getElementById("mod");
+const confirmCancel = document.getElementById("confirmCancel");
 
 carrito.onclick = function () {
   displayCarrito();
@@ -24,12 +26,18 @@ cancelAll.onclick = function () {
 
   numItemsNumber = 0;
   numItems.textContent = 0 + " items";
-  displayCarrito()
-}
+  displayCarrito();
+
+  confirmCancel.style.display = "block";
+  let close2 = document.getElementById("close2");
+  close2.onclick = function () {
+    confirmCancel.style.display = "none";
+  };
+};
 
 noCancel.onclick = function () {
   modal.style.display = "none";
-}
+};
 
 let carritoProductos = [];
 let carritoCantidades = [];
@@ -148,8 +156,6 @@ function adicionarAlCarrito(name, price) {
 
 function fillCarrito(tbody, total) {
   for (let index = 0; index < carritoProductos.length; index++) {
-    const element = carritoProductos[index];
-
     let row = document.createElement("tr");
 
     let tdItem = document.createElement("th");
@@ -179,7 +185,7 @@ function fillCarrito(tbody, total) {
       tdQty.textContent = carritoCantidades[index];
       tdAmount.textContent = carritoAmount[index];
 
-      totalAmout = totalAmout + carritoPrecioUnidad[index]
+      totalAmout = totalAmout + carritoPrecioUnidad[index];
       total.textContent = "Total: $" + totalAmout;
 
       numItemsNumber = numItemsNumber + 1;
@@ -198,9 +204,9 @@ function fillCarrito(tbody, total) {
         tdQty.textContent = carritoCantidades[index];
         tdAmount.textContent = carritoAmount[index];
         if (carritoCantidades[index] == 0) {
-          tdAmount.textContent = 0
+          tdAmount.textContent = 0;
         }
-        totalAmout = totalAmout - carritoPrecioUnidad[index]
+        totalAmout = totalAmout - carritoPrecioUnidad[index];
         total.textContent = "Total: $" + totalAmout;
 
         numItemsNumber = numItemsNumber - 1;
@@ -227,15 +233,15 @@ function preCancelOrder() {
 
   modal.style.display = "block";
 
-  close.onclick = function() {
+  close.onclick = function () {
     modal.style.display = "none";
-  }
+  };
 
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  }
+  };
 }
 
 function displayCarrito() {
@@ -272,24 +278,24 @@ function displayCarrito() {
   thead.appendChild(modify);
 
   const tbody = document.createElement("tbody");
-  const div = document.createElement('div')
-  div.className = 'container-fluid'
+  const div = document.createElement("div");
+  div.className = "container-fluid";
 
-  const r = document.createElement('div')
-  r.className = 'row'
+  const r = document.createElement("div");
+  r.className = "row";
 
-  const col9 = document.createElement('div')
-  col9.className = 'col-9'
+  const col9 = document.createElement("div");
+  col9.className = "col-9";
 
-  const col3 = document.createElement('div')
-  col3.className = 'col-3'
+  const col3 = document.createElement("div");
+  col3.className = "col-3";
 
   let cancel = document.createElement("a");
   cancel.className = "btn btn-danger";
   cancel.textContent = "Cancel";
 
   cancel.onclick = function () {
-    preCancelOrder()
+    preCancelOrder();
   };
 
   let confirm = document.createElement("a");
@@ -298,9 +304,7 @@ function displayCarrito() {
 
   confirm.onclick = function () {
     let list = [];
-    for (let index = 0; index < datosJson.length; index++) {
-      const element = datosJson[index];
-      
+    for (let index = 0; index < carritoProductos.length; index++) {
       let obj = new Object();
       obj.item = index;
       obj.quantity = carritoCantidades[index];
@@ -308,14 +312,14 @@ function displayCarrito() {
       obj.unitPrice = carritoPrecioUnidad[index];
       let jsonString = JSON.stringify(obj);
 
-      list.push(jsonString)
+      list.push(jsonString);
     }
-    console.log(list)
+    console.log(list);
   };
 
-  col3.appendChild(cancel)
-  col3.appendChild(confirm)
-  
+  col3.appendChild(cancel);
+  col3.appendChild(confirm);
+
   const total = document.createElement("h6");
 
   fillCarrito(tbody, total);
@@ -326,9 +330,9 @@ function displayCarrito() {
 
   total.textContent = "Total: $" + totalAmout;
 
-  col9.appendChild(total)
-  r.appendChild(col9)
-  r.appendChild(col3)
-  div.appendChild(r)
-  productsDiv.appendChild(div)
+  col9.appendChild(total);
+  r.appendChild(col9);
+  r.appendChild(col3);
+  div.appendChild(r);
+  productsDiv.appendChild(div);
 }

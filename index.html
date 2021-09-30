@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -24,7 +24,7 @@
             <div class="col-3 centrar">
                 <div class="row">
                     <div class="col-5 centrar">
-                        <img src="imagenCarrito.png" id="carrito">
+                        <img src="imagenCarrito.png" alt="imagenCarrito" id="carrito">
                         <p></p>
                         <p id="numItems"> 0 items</p>
                     </div>
@@ -34,7 +34,7 @@
         <hr>
         <div class="row">
             <div class="col">
-                <img src="imagenCentral.png">
+                <img src="imagenCentral.png" alt="imagenCentral">
             </div>
         </div>
         <hr>
@@ -50,7 +50,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col centrar">
-                <h3 id="selected"></h3>
+                <h3 id="selected">
+                </h3>
             </div>
         </div>
     </div>
@@ -71,7 +72,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Cancel the order</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="close"></button>
                 </div>
                 <div class="modal-body">
                     <p>Are you sure about cancelling the order?</p>
@@ -87,6 +89,19 @@
             </div>
         </div>
     </div>
+
+    <div class="modal" tabindex="-1" id="confirmCancel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="close2"></button>
+                    <p>Your order was canceled successfully</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="main.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
